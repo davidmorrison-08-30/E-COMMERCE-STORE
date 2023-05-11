@@ -13,10 +13,10 @@ This is a repository holding our Software Engineering's project
 
 ## SPRINTS
 
-[x] Sprint 1: May 5 to May 19
+- [ ] Sprint 1: May 5 to May 19
 
-  - Thiết kế sơ đồ các lớp đối tượng
+  + - [ ]Thiết kế sơ đồ các lớp đối tượng
 
-  - Thiết kế database dựa trên sơ đồ các lớp đối tượng
+  + - [ ]Thiết kế database dựa trên sơ đồ các lớp đối tượng
 
-  - Thiết kế "sơ sơ" giao diện trang chủ và trang của các mặt hàng
+  + - [ ]Thiết kế "sơ sơ" giao diện trang chủ và trang của các mặt hàng
