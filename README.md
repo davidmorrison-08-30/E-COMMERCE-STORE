@@ -13,7 +13,7 @@ This is a repository holding our Software Engineering's project
 
 ## SPRINTS
 
-[ ] Sprint 1: May 5 to May 19
+[x] Sprint 1: May 5 to May 19
 
   - Thiết kế sơ đồ các lớp đối tượng
 
