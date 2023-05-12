@@ -21,4 +21,4 @@ This is a repository holding our Software Engineering's project
 
   + - [ ] Thiết kế database dựa trên sơ đồ các lớp đối tượng
 
-  + - [ ] Thiết kế "sơ sơ" giao diện trang chủ và trang của các mặt hàng
+  + - [ ] Thiết kế "sơ sơ" website: giao diện trang chủ và các mặt hàng, chức năng sign in/sign up, quản lý database
