@@ -15,6 +15,8 @@ This is a repository holding our Software Engineering's project
 
 - [ ] Sprint 1: May 5 to May 19
 
+  + - [ ] Viết lại trang wiki 
+
   + - [ ] Thiết kế sơ đồ các lớp đối tượng
 
   + - [ ] Thiết kế database dựa trên sơ đồ các lớp đối tượng
