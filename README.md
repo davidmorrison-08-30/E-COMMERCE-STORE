@@ -13,12 +13,12 @@ This is a repository holding our Software Engineering's project
 
 ## SPRINTS
 
-- [ ] Sprint 1: May 5 to May 19
+- [ ] Sprint 1: May 19 to June 2 
 
-  + - [ ] Viết lại trang wiki 
+  + - [ ] Viết lại các chức năng trong phần PHÂN TÍCH QUY TRÌNH NGHIỆP VỤ (23:27 May 23 to 23:59 May 26)
 
+  + - [ ] Thiết kế sơ đồ use-case 
+  
   + - [ ] Thiết kế sơ đồ các lớp đối tượng
 
-  + - [ ] Thiết kế database dựa trên sơ đồ các lớp đối tượng
-
-  + - [ ] Thiết kế "sơ sơ" website: giao diện trang chủ và các mặt hàng, chức năng sign in/sign up, quản lý database
+  + - [ ] Code demo trang chủ của website
