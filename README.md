@@ -15,7 +15,7 @@ This is a repository holding our Software Engineering's project
 
 - [ ] Sprint 1: May 19 to June 2 
 
-  + - [ ] Viết lại các chức năng trong phần PHÂN TÍCH QUY TRÌNH NGHIỆP VỤ (23:27 May 23 to 23:59 May 26)
+  + - [ ] Viết lại các chức năng trong phần PHÂN TÍCH QUY TRÌNH NGHIỆP VỤ
 
   + - [ ] Thiết kế sơ đồ use-case 
   
