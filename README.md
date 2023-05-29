@@ -21,7 +21,7 @@ This is a repository holding our Software Engineering's project
   
   + - [ ] Thiết kế sơ đồ các lớp đối tượng
 
-  + - [ ] Code demo trang chủ của website
+  + - [ ] Có một vài hình minh họa cho website
 
 ## BIÊN BẢN HỌP
 
