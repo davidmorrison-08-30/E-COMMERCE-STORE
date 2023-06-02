@@ -19,11 +19,20 @@ This is a repository holding our Software Engineering's project
 
   + - [ ] Thiết kế sơ đồ use-case 
   
-  + - [ ] Thiết kế sơ đồ các lớp đối tượng
+  + - [ ] Thiết kế sơ đồ các lớp object
 
-  + - [ ] Có một vài hình minh họa cho website
+  + - [ ] Có một vài hình minh họa cho phần Requirements
 
 ## BIÊN BẢN HỌP
+
+### May 29:
+
+  + Actions:
+    * Làm chức năng quản lý đơn hàng (admin) (Tường)
+    * Use case cho user/customer : 7 mục đầu tiên (Đ.Anh)
+    * Use case cho admin : quản lý đơn hàng, nhận đơn & giao hàng, quản lý sản phẩm (Khôi)
+    * Sơ đồ object class, Làm chức năng quản lý giỏ hàng (customer) (Khôi)
+    * Hình minh họa cho Requirements (Ngân)
 
 ### May 23:
   
@@ -59,7 +68,7 @@ This is a repository holding our Software Engineering's project
       * Đông Anh
           * (chọn nội dung để viết wiki)
           
-  + Action:
+  + Actions:
       * Viết lại phần PHÂN TÍCH QUY TRÌNH NGHIỆP VỤ (PTQTNV)
       * Khôi: đăng ký và đăng nhập
       * Ngân: xem thông tin cá nhân & tìm kiếm sản phẩm
