@@ -1,8 +1,8 @@
 from django.db import models
 
 class Customer(models.Model):
-    username = models.CharField(max_length=250)
-    phone = models.CharField(max_length=10)
+    name = models.CharField(max_length=250)
+    username = models.CharField(max_length=250, primary_key=True)
     password = models.CharField(max_length=250)
 
     #to save the data
