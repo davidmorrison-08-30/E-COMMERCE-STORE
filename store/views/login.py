@@ -17,7 +17,24 @@ class Login(View):
         customer = Customer.get_customer_by_username (username)
 
         print (username, password)
-        return render (request, 'login.html', {'error': error_message})
+        error_message = None
+        if customer:
+            flag = check_password(password, customer.password)
+            if flag:
+                request.session['customer'] = customer.username
+
+                if Login.return_url:
+                    return HttpResponseRedirect(Login.return_url)
+                else:
+                    Login.return_url = None
+                    return redirect('homepage')
+            else:
+                error_message = 'Invalid !!'
+        else:
+            error_message = 'Invalid !!'
+
+        print(username, password)
+        return render(request, 'login.html', {'error': error_message})
 
 def logout(request):
     request.session.clear()
