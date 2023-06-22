@@ -38,4 +38,11 @@ class Signup (View):
             }
             return render (request, 'signup.html', data)
 
-   
+    def validateCustomer(self, customer):
+        error_message = None
+        if len (customer.password) < 12:
+            error_message = 'Password must be 12 char long'
+        elif customer.isExists ():
+            error_message = 'Username Already Registered..'
+        # saving
+        return render (request, 'login.html', {'error': error_message})

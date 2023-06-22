@@ -5,23 +5,11 @@ This is a repository holding our Software Engineering's project
 
   - Programming languages: Python, HTML
 
-  - IDLE: PyCharm Community Edition
+  - IDLE: PyCharm Community Edition & Visual Studio Code
 
   - Framework: Django
 
   - Database: SQLite (default for Django)
-
-## SPRINTS
-
-- [ ] Sprint 1: May 19 to June 2 
-
-  + - [ ] Viết lại các chức năng trong phần PHÂN TÍCH QUY TRÌNH NGHIỆP VỤ
-
-  + - [ ] Thiết kế sơ đồ use-case 
-  
-  + - [ ] Thiết kế sơ đồ các lớp object
-
-  + - [ ] Có một vài hình minh họa cho phần Requirements
 
 ## BIÊN BẢN HỌP
 
