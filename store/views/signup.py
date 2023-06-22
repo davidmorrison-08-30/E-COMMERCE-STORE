@@ -45,5 +45,4 @@ class Signup (View):
         elif customer.isExists ():
             error_message = 'Username Already Registered..'
         # saving
-
-        return error_message
+        return render (request, 'login.html', {'error': error_message})
