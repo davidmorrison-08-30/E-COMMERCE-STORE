@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load cart %}
+{% load custom_filter %}
+<div class="container">
+   <div class="border rounded p-4 m-4">
+        <p class="display-4 pl-4 ml-4">Đơn hàng chưa được giao (Pending)</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Hình ảnh</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Ngày tháng đặt hàng</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                {% if not order.status %}
+                <hr>
+                {% for product in order.products.all %}
+                <tr>
+                    <td><img style="height: 80px;" class="rounded-circle" src="{{product.image.url}}" alt=""></td>
+                    <td>{{product.name}}</td>
+                    <td>{{order.date}}</td>
+                    <td>{{product.price}} VNĐ</td>
+                    <td>{{product|cart_quantity:request.session.cart}}</td>
+                    <td>{{order.quantity|multiply:order.price}} VNĐ</td>
+                    <td><small class="badge badge-warning">Pending</small></td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+        <p class="display-4 pl-4 ml-4">Delivered orders</p>
+        <hr>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Date</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+             <tbody>
+                {% for order in orders %}
+                {% if order.status %}
+                <hr>
+                {% for product in order.products.all %}
+                <tr>
+                    <td><img style="height: 80px;" class="rounded-circle" src="{{product.image.url}}" alt=""></td>
+                    <td>{{product.name}}</td>
+                    <td>{{order.date}}</td>
+                    <td>{{product.price}} VNĐ</td>
+                    <td>{{product.id}}</td>
+                    <td>{{order.quantity|multiply:order.price}} VNĐ</td>
+                    <td><small class="badge badge-warning">Delivered</small></td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+                {% endfor %}
+               
+            </tbody>
+
+        </table>
+       
+   </div>
+</div>
+
+
+
+
+
+{% endblock %}
