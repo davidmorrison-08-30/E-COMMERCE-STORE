@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load cart %}
+{% load custom_filter %}
+<div class="container">
+   <div class="border rounded p-4 m-4">
+        <p class="display-4 pl-4 ml-4">Đơn hàng chưa được giao (Pending)</p>
+        {% for order in orders %}
+        {% if not order.status%}
+        <table class="table">
+            <h4>Đơn hàng {{order.id}}</h4>
+            <thead>
+                <tr>
+                    <th>Hình ảnh</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Thời điểm đặt hàng</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Tổng giá</th>
+                    <th>Trạng thái</th>
+                </tr>
+            </thead>
+            <tbody>
+                <hr>
+                {% for product in order.products %}
+                <tr>
+                    <td><img style="height: 80px;" class="rounded-circle" src="{{product.0}}" alt=""></td>
+                    <td>{{product.1}}</td>
+                    <td>{{order.date}}</td>
+                    <td>{{product.2}}</td>
+                    <td>{{product.3}}</td>
+                    <td>{{product.4}}</td>
+                    <td><small class="badge badge-warning">Pending</small></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+       <h5 align="right">Số tiền phải trả: {{order.sum_price}}</h5>
+       {% endif %}
+        {% endfor %}
+
+        <p class="display-4 pl-4 ml-4">Đơn hàng đã được giao (Delivered)</p>
+        {% for order in orders %}
+        {% if order.status%}
+        <h4>Đơn hàng {{order.id}}</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Hình ảnh</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Thời điểm đặt hàng</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Tổng giá</th>
+                    <th>Trạng thái</th>
+                </tr>
+            </thead>
+             <tbody>
+                <hr>
+                {% for product in order.products %}
+                <tr>
+                   <td><img style="height: 80px;" class="rounded-circle" src="{{product.0}}" alt=""></td>
+                    <td>{{product.1}}</td>
+                    <td>{{order.date}}</td>
+                    <td>{{product.2}}</td>
+                    <td>{{product.3}}</td>
+                    <td>{{product.4}}</td>
+                    <td><small class="badge badge-warning">Delivered</small></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+       <h5 align="right">Số tiền phải trả: {{order.sum_price}}</h5>
+        {% endif %}
+        {% endfor %}
+       
+   </div>
+</div>
+
+
+
+
+
+{% endblock %}
