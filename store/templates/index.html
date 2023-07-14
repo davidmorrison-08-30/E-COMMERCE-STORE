@@ -28,7 +28,9 @@
 			<div class="row mx-auto">
 				{% for product in products %}
 				<div class="card mx-auto mb-3" id={{product.id}} style="width: 18rem;">
+					<a href="/store/{{product.id}}" target="_blank">
 					<img class="card-img-top" src="{{product.image.url}}" alt="Card image cap">
+					</a>
 					<div class="card-body">
 						<p class="card-title">{{product.name}}</p>
 						<p class="card-text"><b>{{product.price}} VNĐ</b></p>
@@ -60,7 +62,6 @@
 								style="background-color:DodgerBlue;" value="Thêm vào giỏ hàng">
 						</form>
 						{% endif %}
-
 					</div>
 
 				</div>
