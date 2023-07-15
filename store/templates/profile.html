@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load cart %}
+{% load custom_filter %}
+
+<div class="container my-4">
+    <form action="/action_page.php">
+      <label for="fname">Họ và tên:</label>
+      <input type="text" id="fname" name="fname" value="{{customer.name}}"><br><br>
+      <label for="lname">Username:</label>
+      <input type="text" id="lname" name="lname" value="{{customer.username}}"><br><br>
+      <label for="lname">Password:</label>
+      <input type="text" id="lname" name="lname" value="{{customer.password}}"><br><br>
+    </form>
+</div>
+
+{% endblock %}
