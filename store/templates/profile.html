@@ -4,14 +4,14 @@
 {% load cart %}
 {% load custom_filter %}
 
-<div class="container my-4">
-    <form action="/action_page.php">
-      <label for="fname">Họ và tên:</label>
-      <input type="text" id="fname" name="fname" value="{{customer.name}}"><br><br>
-      <label for="lname">Username:</label>
-      <input type="text" id="lname" name="lname" value="{{customer.username}}"><br><br>
-      <label for="lname">Password:</label>
-      <input type="text" id="lname" name="lname" value="{{customer.password}}"><br><br>
+<div class="container my-4" align="center">
+    <h2>Thông tin tài khoản</h2>
+    <form>
+        <label for="name">Họ và tên: </label>
+        <input type="text" id="name" name="name" value="{{customer.name}}"><br><br>
+        <label for="username">Username: </label>
+        <input type="text" id="username" name="username" value="{{customer.username}}"><br><br>
+        <input type="submit" value="Submit">
     </form>
 </div>
 

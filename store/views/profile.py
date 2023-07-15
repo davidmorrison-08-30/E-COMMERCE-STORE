@@ -4,5 +4,5 @@ from django.shortcuts import render , redirect , HttpResponseRedirect
 
 class ProfileView(View):
 	def get(self, request):
-		customer = request.session.get('customer')
+		customer = Customer.get_customer_by_username(request.session.get('customer'))
 		return render(request, 'profile.html', {'customer': customer})
