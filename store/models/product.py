@@ -1,5 +1,6 @@
 from django.db import models
 from .category import Category
+
 class Products(models.Model):
     name = models.CharField(max_length=250)
     price = models.IntegerField()
