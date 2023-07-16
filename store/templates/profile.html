@@ -3,16 +3,30 @@
 
 {% load cart %}
 {% load custom_filter %}
+<head>
+    <script>
+        var k = {{customer.pw_len}};
+        function setInputValue() {
+                var inputValue = "*".repeat(k);
+                document.getElementById("myInput").value = inputValue;
+              }
+    </script>
+</head>
 
-<div class="container my-4" align="center">
-    <h2>Thông tin tài khoản</h2>
-    <form>
-        <label for="name">Họ và tên: </label>
-        <input type="text" id="name" name="name" value="{{customer.name}}"><br><br>
-        <label for="username">Username: </label>
-        <input type="text" id="username" name="username" value="{{customer.username}}"><br><br>
-        <input type="submit" value="Submit" class="btn btn-sm btn-success col-lg-12">
-    </form>
-</div>
+<body onload="setInputValue()">
+    <div class="container my-4" align="center">
+        <h2>Thông tin tài khoản</h2>
+        <form>
+            <label for="name">Họ và tên: </label>
+            <input type="text" id="name" name="name" value="{{customer.name}}" readonly><br><br>
+            <label for="username">Username: </label>
+            <input type="text" id="username" name="username" value="{{customer.username}}" readonly><br><br>
+            <label for="username">Password: </label>
+            <input type="text" id="myInput" name="password" style="font-weight: bolder"  readonly><br><br>
+            <label for="username">Số đơn hàng đã đặt: </label>
+            <input type="text" id="order" name="order" value="{{num_orders}}"  readonly><br><br>
+        </form>
+    </div>
+</body>
 
 {% endblock %}

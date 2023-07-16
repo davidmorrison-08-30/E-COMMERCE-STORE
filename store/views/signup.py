@@ -28,6 +28,7 @@ class Signup (View):
 
         if not error_message:
             print (name, username, password)
+            customer.pw_len = len(password)
             customer.password = make_password (customer.password)
             customer.register ()
             return redirect ('homepage')

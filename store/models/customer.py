@@ -4,6 +4,7 @@ class Customer(models.Model):
     name = models.CharField(max_length=250)
     username = models.CharField(max_length=250, primary_key=True)
     password = models.CharField(max_length=250)
+    pw_len = models.IntegerField(default=0)
 
     #to save the data
     def register(self):
