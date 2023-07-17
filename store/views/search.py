@@ -11,4 +11,4 @@ class SearchView(View):
 
 	def get_queryset(self):
 		query = self.request.GET.get("q")
-		return Products.objects.filter(title__icontains=query).order_by("-created_at")
+		return Products.objects.filter(name__contains=query)

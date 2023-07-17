@@ -23,6 +23,12 @@
 			</div>
 		</div>
 
+		<form  action="{% url 'search_products' %}" method="get">
+			{% csrf_token %}
+			<input type="search" name="q" placeholder="Tìm sản phẩm">
+			<button type="submit" >Tìm</button>
+      	</form>
+
 		<!-- all products -->
 		<div id='products' class="col-lg-9 mx-auto">
 			<div class="row mx-auto">

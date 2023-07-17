@@ -24,5 +24,5 @@ urlpatterns = [
    path('orders', auth_middleware(OrderView.as_view()), name='orders'),
    path('store/<int:prodid>', ProductView.as_view(), name="details"),
    path('profile', auth_middleware(ProfileView.as_view()), name='profile'),
-   path('search-products/', views.BlogSearchView.as_view(), name="search")
+   path('search-products/', SearchView.as_view(), name='search_products')
 ]
