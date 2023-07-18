@@ -51,10 +51,20 @@
           <a class="nav-link" href="/store"><b>Store</b> <span class="sr-only">(current)</span></a>
         </li>
 
-          </ul>
+      </ul>
 
-
-
+      <form class="d-flex" role="search" method="POST" action="{% url 'search-view' %}">
+			 {% csrf_token %}
+			 <input
+				class="form-control me-2"
+				type="search"
+				placeholder="Tìm kiếm sản phẩm"
+				name="search_query"
+				required aria-label="Search"
+			 >
+			 <button class="btn btn-outline-success" type="submit" style="color:black;">
+               <b>Tìm kiếm</b></button>
+		</form>
 
       <ul class=" navbar-nav my-2 my-lg-0">
 
@@ -73,7 +83,10 @@
           <a class="nav-link" href="/logout"><b>Đăng xuất</b><span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active ">
-          <a class="nav-link" href="/profile"><b>Profile</b><span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/profile">
+            <img src="https://icon-library.com/images/account-icon/account-icon-18.jpg" style="width:30px; height:30px;"/>
+            <span class="sr-only">(current)</span>
+          </a>
         </li>
         {% else %}
 

@@ -23,18 +23,6 @@
 			</div>
 		</div>
 
-		<form class="d-flex" role="search" method="POST" action="{% url 'search-view' %}">
-			 {% csrf_token %}
-			 <input
-				class="form-control me-2"
-				type="search"
-				placeholder="Tìm kiếm sản phẩm"
-				name="search_query"
-				required aria-label="Search"
-			 >
-			 <button class="btn btn-outline-success" type="submit">Tìm kiếm</button>
-		</form>
-
 		<!-- all products -->
 		<div id='products' class="col-lg-9 mx-auto">
 			<div class="row mx-auto">
