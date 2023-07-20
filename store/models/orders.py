@@ -6,6 +6,7 @@ from datetime import datetime
 
 
 class Order(models.Model):
+    order = models.IntegerField(default=None, primary_key=True)
     products = models.JSONField()
     customer = models.ForeignKey(Customer,
                                  on_delete=models.CASCADE)
@@ -16,7 +17,12 @@ class Order(models.Model):
     status = models.BooleanField(default=False) # False ~ Pending, True ~ Delivered
 
     def placeOrder(self):
+        self.order = self.id
         self.save()
+
+    def get_order_id(self):
+        return self.id
+    get_order_id.short_description = "Order"
 
     @staticmethod
     def get_orders_by_customer(customer_id):
