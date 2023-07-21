@@ -10,7 +10,7 @@
         {% for order in orders %}
         {% if not order.status%}
         <table class="table">
-            <h4>Đơn hàng {{order.id}}</h4>
+            <h4>Đơn hàng {{order.order}}</h4>
             <thead>
                 <tr>
                     <th>Hình ảnh</th>
@@ -44,7 +44,7 @@
         <p class="display-4 pl-4 ml-4">Đơn hàng đã được giao (Delivered)</p>
         {% for order in orders %}
         {% if order.status%}
-        <h4>Đơn hàng {{order.id}}</h4>
+        <h4>Đơn hàng {{order.order}}</h4>
         <table class="table">
             <thead>
                 <tr>
