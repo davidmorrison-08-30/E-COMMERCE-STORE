@@ -51,6 +51,38 @@
         </div>
 
     </div>
-</div>
 
+    {% for comment in comments %}
+          <div class="comments" style="padding: 10px;">
+              <p class="font-weight-bold">
+                  {{ comment.customer.name }}
+                  <span class=" text-muted font-weight-normal">
+                      {{ comment.created_on }}
+                  </span>
+              </p>
+              {{ comment.body | linebreaks }}
+          </div>
+    {% endfor %}
+
+      <div class="card-body">
+          {% if new_comment %}
+              <div class="alert alert-success" role="alert">
+                  Bình luận của bạn đang chờ được thông qua
+              </div>
+          {% else %}
+              <h5>Chia sẻ cảm nhận của bạn về sản phẩm</h5>
+              <form method="POST" style="margin-top: 1.3em;" action="{% url 'store' prodid=prodid %}">
+                  {{ comment_form.as_p }}
+                  {% csrf_token %}
+                  <input
+                      class="form-control me-2"
+                      placeholder="Viết đánh giá..."
+                      name="body"
+                      required aria-label="Comment"
+                  >
+                  <button type="submit" class="btn btn-primary  btn-lg">Gửi</button>
+              </form>
+          {% endif %}
+      </div>
+</div>
 {% endblock %}
