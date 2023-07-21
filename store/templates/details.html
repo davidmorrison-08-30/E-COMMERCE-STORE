@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block title %} {{product.product_name}} {% endblock %}
+{% block content %}
+
+{% load cart %}
+{% load custom_filter %}
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-4">
+        <div class="row">
+           <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap"
+                width="233px" height="385px">
+        </div>
+        </div>
+
+        <div class="col-md-8">
+            <h4>{{product.name}}</h4>
+            <h5 style="color:red;">Giá: {{product.price}} VNĐ</h5>
+            <ul>
+                {% for attr in product.aspects%}
+                <li><b>{{attr.0}}</b>:     {{attr.1}}</li>
+                {% endfor %}
+            </ul>
+            <div class="card-footer p-0 no-gutters">
+
+            {% if product|is_in_cart:request.session.cart %}
+            <div class="row no-gutters">
+                <form action="/#{{product.id}}" class="col-2 " method="post">
+                    {% csrf_token %}
+                    <input hidden type="text" name='product' value='{{product.id}}'>
+                    <input hidden type="text" name='remove' value='True'>
+                    <input type="submit" value=" - " class="btn btn-block btn-success border-right">
+                </form>
+                <div class="text-center col btn btn-success">{{product|cart_quantity:request.session.cart}} in Cart</div>
+                <form action="/#{{product.id}}" class="col-2 " method="post">
+                    {% csrf_token %}
+                    <input hidden type="text" name='product' value='{{product.id}}'>
+                    <input type="submit" value=" + " class="btn btn-block btn-success border-left">
+                </form>
+            </div>
+            {% else %}
+            <form action="/#{{product.id}}" method="POST" class="btn-block">
+                {% csrf_token %}
+                <input hidden type="text" name='product' value='{{product.id}}'>
+                <input type="submit" class="float-right btn btn-success form-control"
+                    style="background-color:DodgerBlue;" value="Thêm vào giỏ hàng">
+            </form>
+            {% endif %}
+            </div>
+        </div>
+
+    </div>
+
+    {% for comment in comments %}
+          <div class="comments" style="padding: 10px;">
+              <p class="font-weight-bold">
+                  {{ comment.customer.name }}
+                  <span class=" text-muted font-weight-normal">
+                      {{ comment.created_on }}
+                  </span>
+              </p>
+              {{ comment.body | linebreaks }}
+          </div>
+    {% endfor %}
+
+      <div class="card-body">
+          {% if new_comment %}
+              <div class="alert alert-success" role="alert">
+                  Bình luận của bạn đang chờ được thông qua
+              </div>
+          {% else %}
+              <h5>Chia sẻ cảm nhận của bạn về sản phẩm</h5>
+              <form method="POST" style="margin-top: 1.3em;" action="{% url 'store' prodid=prodid %}">
+                  {{ comment_form.as_p }}
+                  {% csrf_token %}
+                  <input
+                      class="form-control me-2"
+                      placeholder="Viết đánh giá..."
+                      name="body"
+                      required aria-label="Comment"
+                  >
+                  <button type="submit" class="btn btn-primary  btn-lg">Gửi</button>
+              </form>
+          {% endif %}
+      </div>
+</div>
+{% endblock %}
